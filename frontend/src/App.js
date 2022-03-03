@@ -1,14 +1,13 @@
 import './App.css';
+import {Container} from "react-bootstrap";
+import ListTaskComponent from "./components/ListTaskComponent";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Todo App</h1>
-        <h3>Created by Przemek Pawlik</h3>
-      </header>
-    </div>
-  );
+    return (
+        <Container>
+            <ListTaskComponent/>
+        </Container>
+    );
 }
 
 export default App;
