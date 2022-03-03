@@ -1,42 +1,41 @@
-import React, {Component} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Container, Row, Table} from "react-bootstrap";
+import {getTasks} from '../requests/TasksRequests';
 
-class ListTaskComponent extends Component {
-    constructor(props) {
-        super(props);
+function ListTaskComponent() {
+    const [tasks, setTasks] = useState([])
 
-        this.state = {
-            tasks: []
-        }
-    }
+    useEffect(() => {
+        getTasks().then(res => {
+            setTasks(res.data)
+        })
+    }, []);
 
-    render() {
-        return (
-            <Container>
-                <h2 className="text-center"> List of Tasks</h2>
-                <Row>
-                    <Table striped bordered hover>
-                        <thead>
-                            <tr>
-                                <th>Title</th>
-                                <th>Description</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        {
-                            this.state.tasks.map(task =>
+    return (
+        <Container>
+            <h2 className="text-center"> List of Tasks</h2>
+            <Row>
+                <Table striped bordered hover>
+                    <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {
+                        tasks.map(task =>
                             <tr key={task.id}>
-                                <td>task.title</td>
-                                <td>task.description</td>
+                                <td>{task.title}</td>
+                                <td>{task.description}</td>
                             </tr>
-                            )
-                        }
-                        </tbody>
-                    </Table>
-                </Row>
-            </Container>
-        );
-    }
+                        )
+                    }
+                    </tbody>
+                </Table>
+            </Row>
+        </Container>
+    );
 }
 
 export default ListTaskComponent;

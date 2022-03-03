@@ -7,6 +7,7 @@ import pl.przemek.services.TaskService;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/api/tasks")
 public class TasksController {
