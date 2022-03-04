@@ -13,7 +13,7 @@ import javax.validation.constraints.NotEmpty;
 @Setter
 public class Task {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @NotEmpty
@@ -21,5 +21,14 @@ public class Task {
 
     @NotEmpty
     private String description;
+
+    @Override
+    public String toString() {
+        return "Task{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                '}';
+    }
 
 }

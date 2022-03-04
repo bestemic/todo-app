@@ -20,8 +20,12 @@ public class TasksController {
     }
 
     @GetMapping("/getAll")
-    public List<Task> getAllTasks(){
+    public List<Task> getAllTasks() {
         return taskService.findAll();
     }
 
+    @PostMapping("/create")
+    public Task task(@RequestBody Task task) {
+        return taskService.save(task);
+    }
 }
