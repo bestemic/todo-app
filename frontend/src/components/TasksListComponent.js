@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Container, Row, Table} from "react-bootstrap";
 import {getTasks} from '../requests/TasksRequests';
 
-function ListTaskComponent() {
+function TasksListComponent() {
     const [tasks, setTasks] = useState([])
 
     useEffect(() => {
@@ -38,4 +38,4 @@ function ListTaskComponent() {
     );
 }
 
-export default ListTaskComponent;
+export default TasksListComponent;
