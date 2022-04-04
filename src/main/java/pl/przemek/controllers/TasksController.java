@@ -19,13 +19,15 @@ public class TasksController {
         this.taskService = taskService;
     }
 
+    // get all tasks
     @GetMapping("/getAll")
     public List<Task> getAllTasks() {
         return taskService.findAll();
     }
 
+    // create task
     @PostMapping("/create")
-    public Task task(@RequestBody Task task) {
+    public Task createTaks(@RequestBody Task task) {
         return taskService.save(task);
     }
 }
