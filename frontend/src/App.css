@@ -21,3 +21,41 @@
 .content-wrap {
     flex: 1;
 }
+
+.form .input {
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #3b444b;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+.form button {
+    margin-top: 15px;
+    height: 40px;
+    border: none;
+    background-color: #3b444b;
+    border-radius: 5px;
+    color: white;
+}
+
+.form button:hover {
+    cursor: pointer;
+    background-color: #232b2b;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    border: 5px solid #3b444b;
+    border-radius: 5px;
+}
+
+.form label {
+    text-align: left;
+}
