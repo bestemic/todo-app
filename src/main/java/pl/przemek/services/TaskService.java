@@ -18,11 +18,11 @@ public class TaskService {
         this.taskRepository = taskRepository;
     }
 
-    public List<Task> findAll(){
+    public List<Task> getAllTasks(){
         return taskRepository.findAll();
     }
 
-    public Task save(Task task){
+    public Task saveTask(Task task){
         return taskRepository.save(task);
     }
 }

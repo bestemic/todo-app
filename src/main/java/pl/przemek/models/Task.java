@@ -14,7 +14,7 @@ import javax.validation.constraints.NotEmpty;
 public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @NotEmpty
     private String title;

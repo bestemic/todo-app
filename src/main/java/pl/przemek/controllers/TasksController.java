@@ -26,13 +26,13 @@ public class TasksController {
     @GetMapping("/getAll")
     @ApiOperation("Get all tasks")
     public List<Task> getAllTasks() {
-        return taskService.findAll();
+        return taskService.getAllTasks();
     }
 
     // create task
     @PostMapping("/create")
     @ApiOperation("Create task")
     public Task createTaks(@RequestBody Task task) {
-        return taskService.save(task);
+        return taskService.saveTask(task);
     }
 }
